@@ -19,6 +19,6 @@ Done! You're now just one toolbar click away from your desired result.
 
 Available tweaks:
 
-* [CreateFile](finder_toolbar/add_CreateFile.sh)Creates a new file in the Finder.
+* [CreateFile](finder_toolbar/add_CreateFile.sh): Creates a new file in the Finder.
 * [OpenTerminal](finder_toolbar/add_OpenTerminal.sh): Opens the Terminal and sets its working directory to the current Finder window.
 * [OpenVisualStudioCode](finder_toolbar/add_OpenVisualStudioCode.sh): Opens the Visual Studio Code from a specific directory.
