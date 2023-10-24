@@ -2,6 +2,8 @@
 
 This repository contains various tweaks for macOS to enhance user experience.
 
+[TOC]
+
 ## Finder Toolbar
 
 These scripts are designed to be placed in the Finder Toolbar, providing quick access to various operations, such as creating a new file in the current folder.
@@ -22,3 +24,7 @@ Available tweaks:
 * [CreateFile](finder_toolbar/add_CreateFile.sh): Creates a new file in the Finder.
 * [OpenTerminal](finder_toolbar/add_OpenTerminal.sh): Opens the Terminal and sets its working directory to the current Finder window.
 * [OpenVisualStudioCode](finder_toolbar/add_OpenVisualStudioCode.sh): Opens the Visual Studio Code from a specific directory.
+
+## Misc
+
+* [Disable Dark Theme in some apps](misc/disable_dark_theme.sh): Do you like dark theme on macOS but still prefer light theme in other apps? This script disables dark theme in Finder and other apps.
