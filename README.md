@@ -2,8 +2,6 @@
 
 This repository contains various tweaks for macOS to enhance user experience.
 
-[TOC]
-
 ## Finder Toolbar
 
 These scripts are designed to be placed in the Finder Toolbar, providing quick access to various operations, such as creating a new file in the current folder.
