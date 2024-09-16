@@ -24,6 +24,9 @@ Available tweaks:
 * [CreateFile](finder_toolbar/add_CreateFile.sh): Creates a new file in the Finder.
 * [OpenTerminal](finder_toolbar/add_OpenTerminal.sh): Opens the Terminal and sets its working directory to the current Finder window.
 * [OpenVisualStudioCode](finder_toolbar/add_OpenVisualStudioCode.sh): Opens the Visual Studio Code from a specific directory.
+* [CreateProjectFolder](finder_toolbar/add_CreateProjectFolder.sh): Creates named project folder based on the current date, and includes an empty README.md file inside it.
+
+![create_project_folder_gif](assets/create_project_folder.gif)
 
 ## Misc
 
