@@ -3,7 +3,7 @@
 
 app_name="CreateProjectFolder.app"
 target_directory="/Applications/FinderApps"
-source_icon_filepath=/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/SidebarGenericFolder.icns
+source_icon_filepath=/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns
 
 applescript_file="__temp.applescript"
 app_filepath="$target_directory/$app_name"
@@ -26,7 +26,7 @@ compile_and_customize_app() {
 
 cat <<EOF > "$applescript_file"
 on create_home_folder()
-	set timeStamp to do shell script "date +%y%m%d"
+	set timeStamp to do shell script "date +%y%m%d_%H%M%S"
 	
 	-- Validate that Finder is Open
 	try
@@ -41,16 +41,27 @@ on create_home_folder()
 	set folderCreated to false
 	
 	-- Create Folder
+	-- Determine whether _all exists in current folder
+	set useAllFolder to false
+	tell application "Finder"
+		if exists folder "_all" of currentDirectory then
+			set useAllFolder to true
+			set targetDirectory to folder "_all" of currentDirectory
+		else
+			set targetDirectory to currentDirectory
+		end if
+	end tell
+
 	repeat while folderCreated is false
 		if indexLetter = 0 then
-			set folderName to baseFolderName & "_"
+			set folderName to baseFolderName
 		else
 			set folderName to baseFolderName & "_" & character id (64 + indexLetter)
 		end if
 		
 		tell application "Finder"
-			if not (exists folder folderName of currentDirectory) then
-				set newFolder to make new folder at currentDirectory with properties {name:folderName}
+			if not (exists folder folderName of targetDirectory) then
+				set newFolder to make new folder at targetDirectory with properties {name:folderName}
 				set folderCreated to true
 			end if
 		end tell
@@ -58,6 +69,16 @@ on create_home_folder()
 		set indexLetter to indexLetter + 1
 	end repeat
 	
+	-- If using _all, place alias in current folder for convenience
+	if useAllFolder then
+		tell application "Finder"
+			set aliasName to folderName & ""
+			if not (exists alias file aliasName of currentDirectory) then
+				make new alias file at currentDirectory to newFolder with properties {name:aliasName}
+			end if
+		end tell
+	end if
+
 	return newFolder
 end create_home_folder
 
