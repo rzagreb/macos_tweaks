@@ -25,6 +25,7 @@ Available tweaks:
 * [CreateProjectFolder](finder_toolbar/add_CreateProjectFolder.sh): Creates named project folder based on the current date/time, and includes an empty README.md file inside it.
   - If a `_all` folder exists in the current Finder directory, the project folder is created inside `_all` and an alias is placed in the current folder.
   - If `_all` does not exist, the project folder is created in the current folder.
+* [CreateWebsiteShortcut](finder_toolbar/add_CreateWebsiteShortcut.sh): Create a shortcut to a website
 
 ![create_project_folder_gif](assets/create_project_folder.gif)
 
