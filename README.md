@@ -22,7 +22,9 @@ Available tweaks:
 * [CreateFile](finder_toolbar/add_CreateFile.sh): Creates a new file in the Finder.
 * [OpenTerminal](finder_toolbar/add_OpenTerminal.sh): Opens the Terminal and sets its working directory to the current Finder window.
 * [OpenVisualStudioCode](finder_toolbar/add_OpenVisualStudioCode.sh): Opens the Visual Studio Code from a specific directory.
-* [CreateProjectFolder](finder_toolbar/add_CreateProjectFolder.sh): Creates named project folder based on the current date, and includes an empty README.md file inside it.
+* [CreateProjectFolder](finder_toolbar/add_CreateProjectFolder.sh): Creates named project folder based on the current date/time, and includes an empty README.md file inside it.
+  - If a `_all` folder exists in the current Finder directory, the project folder is created inside `_all` and an alias is placed in the current folder.
+  - If `_all` does not exist, the project folder is created in the current folder.
 
 ![create_project_folder_gif](assets/create_project_folder.gif)
 
